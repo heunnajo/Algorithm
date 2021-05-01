@@ -15,27 +15,38 @@ public class Editor2 {
 		
 		while(n-- >0) {
 			//명령어 입력 받는다.
-			String line = sc.nextLine();
-			String[] str = line.split(" ");
-			String cmd = str[0];
-			if(cmd.equals("L")) {
-				right.push(left.pop());
-			} else if(cmd.equals("R")) {
-				left.push(right.pop());
-			} else if(cmd.equals("B")) {
-				left.pop();
-			} else if(cmd.equals("P")) {
-				String newstr = sc.nextLine();
-				String[] newstrarr = newstr.split(" ");
-				String newc = newstrarr[0];
-				char newchar = newc.charAt(0);
-				left.push(newchar);
+			// String line = sc.nextLine();
+			// String[] str = line.split(" ");
+			// String cmd = str[0];
+            String[] line = sc.nextLine().split(" ");
+            char cmd = line[0].charAt(0);//글자 하나만 필요하니까! 불필요하게 String에 담을 필요 없다!
+
+			if(cmd == 'L') {
+                if(!left.empty()) {
+				    right.push(left.pop());
+                }
+			} else if(cmd == 'R') {
+                if(!right.empty()) {
+				    left.push(right.pop());
+                }
+			} else if(cmd == 'B') {
+                if(!left.empty()) {
+				    left.pop();
+                }
+			} else if(cmd == 'P') {
+                char c = line[1].charAt(0);
+                left.push(c);
+				// String newstr = sc.nextLine();
+				// String[] newstrarr = newstr.split(" ");
+				// String newc = newstrarr[0];
+				// char newchar = newc.charAt(0);
+				// left.push(newchar);
 			}
 		}
-		while(!left.isEmpty()) {
+		while(!left.empty()) {
 			right.push(left.pop());
 		}
-		while(!right.isEmpty()) {
+		while(!right.empty()) {
 			sb.append(right.pop());
 		}
 		System.out.print(sb);
