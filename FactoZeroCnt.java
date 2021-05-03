@@ -8,11 +8,8 @@ public class FactoZeroCnt {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();//1.N 입력받는다.
 		int sum = 0;
-		for(int i=0;i<N;i++) {
-			int num = N/(5^i);//num : 100/5^0, 100/5^1, 100/5^2,..
-			while(num > 0) {
-				sum += num;
-			}
+		for(int i=5;i<=N;i*=5) {
+			sum += N/i;
 		}
 		System.out.println(sum);
 	}
