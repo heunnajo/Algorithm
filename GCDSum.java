@@ -18,7 +18,8 @@ public class GCDSum {
 			for(int i=0;i<n;i++) {
 				nums[i] = sc.nextInt();
 			}
-			long sum = 0;
+			long sum = 0;//int가 아니라 long
+            //int sum = 0;
 			for(int i=0;i<n-1;i++) {
 				for(int j=i+1;j<n;j++) {
 					sum += GCD(nums[i],nums[j]);
