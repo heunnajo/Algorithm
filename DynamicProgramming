@@ -1,0 +1,5 @@
+Practice to solve Dynamic Programming
+1. 쪼갤 수 없는 작은 문제로 쪼갠다.
+2. 1의 해를 구한다.
+3. 점화식을 세운다.
+4. 코드로 구현한다.
