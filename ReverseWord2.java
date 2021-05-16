@@ -3,7 +3,7 @@ package data_structures;
 import java.util.*;
 import java.io.*;
 
-public class ReverseWord {
+public class ReverseWord2 {
     static void print(BufferedWriter bw, Stack<Character> s) throws IOException {
         while (!s.isEmpty()) {
             bw.write(s.pop());
