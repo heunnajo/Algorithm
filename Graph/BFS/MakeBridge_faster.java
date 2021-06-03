@@ -51,19 +51,18 @@ public class MakeBridge_faster {
 			}
 		}
 		//2+3 합쳐본다.거리배열 완성하는 척하면서 그룹배열업데이트. 조건무관하도록.
-		Queue<Pair4> q = new LinkedList<Pair4>();
+		Queue<Pnt7> q = new LinkedList<Pnt7>();
 		for(int i=0;i<n;i++) {
 			for(int j=0;j<n;j++) {
+				d[i][j]=-1;
 				if(a[i][j]==1) {//육지이고, 방문한적 없는 좌표를 큐에 넣는다!
 					d[i][j] = 0;
-					q.add(new Pair4(i,j));//
-				} else {
-					d[i][j]=-1;
+					q.add(new Pnt7(i,j));//
 				}
 			}
 		}
 		while(!q.isEmpty()) {//큐에서 나오는 좌표들은 다 육지좌표기 때문에 
-			Pair4 cur = q.remove();//cur 기준 상하좌우 바다도 g[nx][ny] = g[x][y]해준다!
+			Pnt7 cur = q.remove();//cur 기준 상하좌우 바다도 g[nx][ny] = g[x][y]해준다!
 			for(int i=0;i<4;i++) {
 				int nx = cur.x+dx[i];
 				int ny = cur.y+dy[i];
@@ -71,6 +70,7 @@ public class MakeBridge_faster {
 				if(d[nx][ny] == -1) {
 					d[nx][ny] = d[cur.x][cur.y]+1;
 					g[nx][ny] = g[cur.x][cur.y];
+					q.add(new Pnt7(nx,ny));
 				}
 			}
 		}
