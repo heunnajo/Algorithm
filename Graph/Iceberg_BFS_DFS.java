@@ -8,7 +8,7 @@ class IB2{
 		this.x = x;this.y = y;
 	}
 }
-public class Iceberg {
+public class Iceberg_BFS_DFS {
 	static int[] rangeX = {-1,0,1,0};
 	static int[] rangeY = {0,1,0,-1};
 	static int N,M;
