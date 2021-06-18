@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class MoveCrashingWall_faster {
+public class MoveCrashingWall_checkFunc {
 	static class MCW4{
 		int x,y,dist,drill_cnt;
 		MCW4(int x,int y,int dist,int drill_cnt){
